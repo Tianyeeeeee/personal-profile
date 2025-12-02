@@ -107,8 +107,8 @@ export default function HeroSection() {
                     </div>
 
                     <h1 class="text-5xl md:text-7xl font-bold leading-tight text-gray-900">
-                        Creative<br />
-                        <span class="text-gray-400">Developer.</span>
+                        CREATIVE<br />
+                        <span class="text-gray-400">DEVELOPER.</span>
                     </h1>
 
                     <p class="text-lg text-gray-600 max-w-lg leading-relaxed">
