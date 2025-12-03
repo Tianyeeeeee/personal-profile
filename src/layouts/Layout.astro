@@ -1,0 +1,37 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+		<ViewTransitions />
+	</head>
+	<body>
+		<slot />
+        
+        <script>
+            console.log(
+                "%c SYSTEM READY %c v1.0.0 \n%c Welcome to the source code. Built with Astro + Solid.",
+                "background:#22c55e; color:black; padding: 2px 5px; border-radius: 2px; font-weight:bold;",
+                "color: #666; font-family: monospace;",
+                "color: #a3a3a3; font-family: monospace; margin-top: 5px;"
+            );
+        </script>
+	</body>
+</html>

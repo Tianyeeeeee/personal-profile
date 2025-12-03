@@ -1,47 +1,47 @@
 ---
-import '../styles/global.css';
-import Navbar from '../components/Navbar';
-import WorkGrid from '../components/WorkGrid';
-import HeroSection from '../components/HeroSection';
-import AboutSection from '../components/AboutSection';
-import SkillsSection from '../components/SkillsSection';
-import ContactSection from '../components/ContactSection';
+import Layout from '../layouts/Layout.astro';
+import CommandPalette from '../components/CommandPalette';
+import Hero from '../components/Hero';
+import BentoGrid from '../components/BentoGrid';
+import StatusFooter from '../components/StatusFooter';
 ---
 
-<html lang="en" class="scroll-smooth">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Tianyeeeeee - 创意开发者，制作有趣的交互体验" />
-		<meta property="og:title" content="Tianyeeeeee - 创意开发者" />
-		<meta property="og:description" content="做有趣的东西。代码 + 创意 = ✨" />
-		<meta property="og:type" content="website" />
-		<title>Tianyeeeeee - 做有趣的东西</title>
-	</head>
-	<body class="bg-white text-gray-900">
-        <Navbar client:load />
+<Layout title="Tianye | Creative Engineer">
+    <CommandPalette client:load />
 
-        <main class="pt-32 pb-20">
-            <!-- 🎨 年轻个性化 Hero -->
-            <HeroSection client:load />
+    <main>
+        <Hero client:load />
 
-            <!-- 🎬 作品集 -->
-            <WorkGrid client:visible />
+        <BentoGrid client:visible />
 
-            <!-- 📚 关于我 + Timeline -->
-            <AboutSection client:visible />
+        <section class="py-20 border-y border-[#222] bg-[#080808] overflow-hidden">
+             <div class="text-center font-mono text-gray-600 text-xs mt-4">// STACK_OVERFLOW</div>
+        </section>
 
-            <!-- 🛠️ 技能与Vibe -->
-            <SkillsSection client:visible />
+        <section class="max-w-2xl mx-auto px-6 py-24">
+            <h2 class="font-mono text-gray-500 mb-8 text-sm">./thoughts</h2>
+            <div class="space-y-6">
+                <a href="#" class="block group">
+                    <div class="flex items-baseline gap-4 font-mono text-sm">
+                        <span class="text-gray-600">// 2025-02-14</span>
+                        <h3 class="text-gray-300 group-hover:text-green-500 transition-colors">
+                            <span class="opacity-0 group-hover:opacity-100 mr-2 text-green-500">_</span>
+                            Building High-Performance WebGL with SolidJS
+                        </h3>
+                    </div>
+                </a>
+                <a href="#" class="block group">
+                    <div class="flex items-baseline gap-4 font-mono text-sm">
+                        <span class="text-gray-600">// 2025-01-20</span>
+                        <h3 class="text-gray-300 group-hover:text-green-500 transition-colors">
+                            <span class="opacity-0 group-hover:opacity-100 mr-2 text-green-500">_</span>
+                            Why I switched from React to Astro
+                        </h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
 
-            <!-- 💌 联系 + 订阅 -->
-            <ContactSection client:visible />
-        </main>
-        
-        <footer class="py-12 text-center text-gray-400 text-sm border-t border-gray-100">
-            © 2025 Design & Code. Built with Astro + Solid + Tailwind.
-        </footer>
-	</body>
-</html>
+    <StatusFooter client:visible />
+</Layout>

@@ -1,32 +1,50 @@
-/* src/styles/global.css */
 @import "tailwindcss";
 
 @theme {
-    --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --color-bg: #050505;
+  --color-card: #0a0a0a;
+  --color-border: #1f1f1f;
+  --color-accent: #22c55e; /* Terminal Green */
 }
 
-html, body {
-    height: 100%;
+/* 强制深色模式 */
+body {
+  background-color: var(--color-bg);
+  color: #e5e5e5;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
-html {
-    scroll-behavior: smooth;
+/* 只有代码、日期、标签使用 Mono 字体 */
+.font-mono {
+  font-family: var(--font-mono);
 }
 
-/* 清爽简洁的滚动条 */
+/* 选中态：赛博朋克紫 */
+::selection {
+  background-color: rgba(139, 92, 246, 0.3);
+  color: #fff;
+}
+
+/* 光标闪烁动画 */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* 隐藏滚动条但保留功能 */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-    background: #f5f5f5;
+    background: var(--color-bg);
 }
-
 ::-webkit-scrollbar-thumb {
-    background: #d0d0d0;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #999;
+    background: #333;
+    border-radius: 3px;
 }
