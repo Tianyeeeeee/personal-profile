@@ -81,3 +81,53 @@ body {
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
 }
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 悬停浮起效果 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hover-float:hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Section entrance animation */
+section {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Glow effect for green accents */
+.glow-green {
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}
